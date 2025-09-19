@@ -1,0 +1,35 @@
+#include <stdio.h> 
+#include <string.h> 
+void main() 
+{ 
+   char roman[30]; 
+   int deci=0; 
+   int length,i,d[30]; 
+   printf("The Roman equivalent to decimal"); 
+   printf("%5d............%3c",1,'I'); 
+   printf("%5d............%3c",5,'V'); 
+   printf("%5d............%3c",10,'X'); 
+   printf("%5d............%3c",50,'L'); 
+   printf("Enter a Roman numeral:"); 
+   scanf("%s",roman); 
+   length=strlen(roman); 
+   for(i=0;i<length;i++){ 
+      switch(roman[i]){ 
+         case 'l': 
+         case 'L': d[i]= 50; break; 
+         case 'x': 
+         case 'X': d[i]= 10; break;; 
+         case 'v': 
+         case 'V': d[i]= 5; break; 
+         case 'i': 
+         case 'I': d[i]= 1; 
+      } 
+   } 
+   for(i=0;i<length;i++){ 
+      if(i==length-1 || d[i]>=d[i+1]) 
+         deci += d[i]; 
+      else 
+         deci -= d[i]; 
+   } 
+   printf("The Decimal equivalent of Roman numeral %s is %d", roman, deci);
+}
