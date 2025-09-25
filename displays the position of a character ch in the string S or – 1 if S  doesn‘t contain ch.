@@ -1,0 +1,20 @@
+#include <stdio.h> 
+#include <string.h> 
+void main() 
+{ 
+   char str[50],ch; 
+   int i,l,c=0; 
+   printf("enter string"); 
+   gets(str); 
+   printf("enter char to search"); 
+   scanf("%c",&ch); 
+   l=strlen(str); 
+   for(i=0;i<=l;i++) 
+   { 
+       if(ch==str[i] && c==0) 
+       {        
+       printf("%c is found at %d in %s\n",ch,i,str); 
+       c=c+1; 
+   } 
+   } 
+   } 
