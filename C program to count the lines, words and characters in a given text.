@@ -1,0 +1,27 @@
+#include <stdio.h> 
+void main() 
+{ 
+char str[100];//input string with size 100 
+int nw=0,nl=0,nc=0; 
+gets(str); 
+for(int i=0;str[i]!='\0';i++) 
+{  
+if(str[i] == ' ') 
+nw++; 
+if(str[i] == '\n') 
+{ 
+nl++; 
+nw++; 
+} 
+if(str[i] != ' ' && str[i] != '\n') 
+nc++; 
+} 
+if(nc > 0) 
+{ 
+nw++; 
+nl++; 
+} 
+printf("Total number of words : %d\n",nw); 
+printf("Total number of lines : %d\n",nl); 
+printf("Total number of characters : %d\n",nc); 
+} 
